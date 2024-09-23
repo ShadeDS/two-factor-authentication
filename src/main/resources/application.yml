@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: two-factor-authentication
+
+two-factor:
+  code-validity-duration: 300
+  resend-interval: 300
+  max-attempts: 3
+
+email:
+  subject: "Your verification code"
+  body:
+    template: "Your code is: {code}"
+  service:
+    url: "http://localhost:8081/api/email"
+
+logging:
+  level:
+    root: INFO
+    com.example.twofactorauthentication.controller: INFO
+    com.example.twofactorauthentication.service: INFO
+    com.example.twofactorauthentication.repository: WARN
