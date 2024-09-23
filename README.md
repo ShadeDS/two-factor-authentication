@@ -50,7 +50,7 @@ POST /api/auth/2fa/resend?email={email}
 **Response**
 
 - `200 OK` if code is resent successfully.
-- `429 TOO MANY REQUESTS` if resend interval has not passed.
+- `400 BAD REQUEST` if resend interval has not passed.
 
 ## Notes
 
