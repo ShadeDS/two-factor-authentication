@@ -38,7 +38,7 @@ class CodeVerificationServiceImplTest {
 
   @Test
   void verify_ShouldReturnCodeExpired_WhenCodeIsExpired() {
-    long creationTime = Instant.now().minusSeconds(301).getEpochSecond(); // Code expired
+    long creationTime = Instant.now().minusSeconds(301).getEpochSecond();
     CodeData codeData = new CodeData(code, creationTime, 0);
 
     VerificationResult result = codeVerificationService.verify(codeData, code);
